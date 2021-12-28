@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Panel
+{% endblock title %}
+{% block body %}
+
+<div class="container my-4" style="text-align: center;">
+    <a href="/logout">
+        <button class="btn btn-primary">Logout</button>
+    </a>
+    <div>
+        <table class="table">
+
+            {% if alltodo|length == 0 %}
+            <div class="alert alert-dark" role="alert">
+                No Record Found. Add Your Todo Now!
+            </div>
+            {% else %}
+            <thead>
+                <tr>
+                    <th scope="col">SNo.</th>
+                    <th scope="col">Pinned By</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+
+            {% for todo in alltodo %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{todo.name}}</td>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.desc}}</td>
+                    <td>{{todo.date_created}}</td>
+                    <td>
+                        <a href="/update/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</a>
+                        <a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock body %}

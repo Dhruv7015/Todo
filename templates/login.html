@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+Dashboard
+{% endblock title %}
+{% block body %}
+
+<form action="/login" method="post" style="text-align: center; margin-top: 5px;">
+
+    <p style="font-size: xx-large;">Admin Panel</p>
+    <div>
+        <input name="username" placeholder="Username" type="text" style="text-align: center;" />
+    </div>
+    <div>
+
+        <input name="password" placeholder="Password" type="password" style="text-align: center; margin: auto;" />
+    </div>
+
+    <div style="margin-top: inherit;">
+        <a href="/logout">
+            <button class="btn btn-primary">LogIn</button>
+        </a>
+    </div>
+</form>
+
+
+{% endblock body %}
