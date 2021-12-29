@@ -44,16 +44,16 @@ def index():
         name = request.form["name"]
         if title != "" and desc != "" and name != "":
             todo = Todo(title=title, desc=desc, name=name)
-            mail.send_message(
-                "MyThought - Message From " + name,
-                sender=params["gmail_user"],
-                recipients=[params["gmail_user"]],
-                body="A thought has been added by :- "
-                + name
-                + "\n"
-                + "Thought :- "
-                + desc,
-            )
+            # mail.send_message(
+            #     "MyThought - Message From " + name,
+            #     sender=params["gmail_user"],
+            #     recipients=[params["gmail_user"]],
+            #     body="A thought has been added by :- "
+            #     + name
+            #     + "\n"
+            #     + "Thought :- "
+            #     + desc,
+            # )
             db.session.add(todo)
             db.session.commit()
     allTodo = Todo.query.all()
