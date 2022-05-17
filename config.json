@@ -4,7 +4,7 @@
         "main_uri": "sqlite:///db/todo.db",
         "admin_user": "admin",
         "admin_password": "Thought@Admin12(allowed)",
-        "gmail_user": "xtremgaming7015@gmail.com",
-        "gmail_password": "Hi!my@name#is_Xtrem1507"
+        "gmail_user": "<your email>",
+        "gmail_password": "<your password>"
     }
 }
